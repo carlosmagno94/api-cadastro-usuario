@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //Conecta ao Mongoose e configura a variável de conexão
-mongoose.connect('mongodb://localhost/restapi' , { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URL ||'mongodb://localhost/restapi' , { useNewUrlParser: true });
 var db  = mongoose.connection;
 
 //porta do servidor de configuração
