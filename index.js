@@ -25,7 +25,7 @@ var port = process.env.PORT || 8080;
 
 //Enviar menssagem para o URL padrão
 app.get('/', (req, res) => {
-res.send('API RESTful  de Cadastro Express e Nodemon')
+res.send('API RESTful Cadastro de Usuário')
 });
 
 //Usar API routes (rotas) no aplicação

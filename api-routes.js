@@ -11,21 +11,11 @@ router.get('/', function(req, res) {
 //Importar Usuário Controller
 var userController = require('./userController');
 
-// router.route('/usuarios')
-// .get(userController.index)
-// .post(userController.new);
-
 router.route('/usuarios/obterUsuarios')
 .get(userController.index);
 
 router.route('/usuarios/cadastrar')
 .post(userController.new);
-
-// router.route('/usuarios/:usuario_id')
-// .get(userController.view)
-// .patch(userController.update)
-// .put(userController.update)
-// .delete(userController.delete);
 
 router.route('/usuarios/obterUsuario/:usuario_id')
 .get(userController.view);

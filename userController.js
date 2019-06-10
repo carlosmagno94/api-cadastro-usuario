@@ -47,24 +47,6 @@ exports.new = function (req, res) {
             .then(user => res.status(200).send({ Ok: 'Usuário cadastrado com sucesso!' }))
             .catch(err => console.error.bind(console, `Erro : ${err}`));
     }
-    // var usuario = new Usuario();
-
-    // usuario.login = req.body.login;
-    // usuario.password = req.body.password;
-    // usuario.name = req.body.name ? req.body.name : usuario.name;
-    // usuario.email = req.body.email;
-    // usuario.tipo = req.body.tipo;
-
-    // //Salvar usuario e verificar erros
-    // usuario.save(function (err) {
-    //     if (err){
-    //         res.json(err);
-    //     }
-    //   res.json({
-    //       message: 'Usuário cadastrado com sucesso!',
-    //       data: usuario
-    //   });
-    // });
 };
 
 exports.view = function (req, res) {
@@ -84,7 +66,6 @@ exports.update = function (req, res) {
         if (err) {
             res.send(err);
         }
-
         usuario.login = req.body.login;
         usuario.name = req.body.name ? req.body.name : usuario.name;
         usuario.email = req.body.email;
