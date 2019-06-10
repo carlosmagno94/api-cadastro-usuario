@@ -10,8 +10,9 @@ exports.index = function (req, res) {
         };
         res.json({
             status: "Sucesso",
-            message: usuarios.length == 1 ? + usuarios.length + ' usuário recuperados com suceso'
-                : usuarios.length + ' usuários recuperados com suceso',
+            message: usuarios.length == 0 ? "Nenhum usuário cadastrado" 
+            : usuarios.length == 1 ? + usuarios.length + ' usuário recuperado com sucesso'
+            : usuarios.length + ' usuários recuperados com sucesso',
             data: usuarios
         });
     });
