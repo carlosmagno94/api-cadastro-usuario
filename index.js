@@ -16,16 +16,17 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-//Conecta ao Mongoose e configure a variável de conexão
-mongoose.connect('mongodb://localhost/restapi');
-
+//Conecta ao Mongoose e configura a variável de conexão
+mongoose.connect('mongodb://localhost/restapi' , { useNewUrlParser: true });
 var db  = mongoose.connection;
 
 //porta do servidor de configuração
 var port = process.env.PORT || 8080;
 
 //Enviar menssagem para o URL padrão
-app.get('/', (req, res) => res.send('API RESTful  de Cadastro Express e Nodemon'));
+app.get('/', (req, res) => {
+res.send('API RESTful  de Cadastro Express e Nodemon')
+});
 
 //Usar API routes (rotas) no aplicação
 app.use('/api', apiRoutes);

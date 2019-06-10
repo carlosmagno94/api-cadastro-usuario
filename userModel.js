@@ -11,11 +11,13 @@ var usuarioSchema = mongoose.Schema({
     },
     email:{
         type: String,
-        require: true
+        required: true,
+        lowercase: true
     },
     password: {
         type: String,
-        require: true
+        require: true,
+        select: false
     },
     tipo: {
         type: String,
